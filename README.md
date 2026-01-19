@@ -1,3 +1,5 @@
+# jssbx
+
 这段 Dockerfile 的主要目的是构建一个基于 **Node.js** 的轻量级容器，用于运行 **`jssbx`** 程序。从环境变量 `ARGO_DOMAIN` 和 `ARGO_AUTH` 来看，这通常用于搭建基于 Cloudflare Argo Tunnel 的网络代理服务（`jssbx` 常见于这类用途，通常是 Sing-box 的一个 Node.js 包装器）。
 
 以下是对该 Dockerfile 的**分析**、**潜在风险**以及**优化建议**。
@@ -78,3 +80,11 @@ docker run -d \
 
 ### 总结
 你提供的脚本可以正常工作，但主要问题在于**凭证泄露风险**。如果你只是自己在本地测试使用没问题；但如果要部署到生产环境或公开代码仓库，请务必移除 `ENV` 中的具体数值。
+
+
+---
+
+### 应用于以下容器搭建节点
+> 本地创建一个名为Dockerfile的文件，需要修改固定隧道参数为自己的，然后将这个文件打包一个zip压缩包 上传 部署即可
+
+https://flootup.com/dashboard
